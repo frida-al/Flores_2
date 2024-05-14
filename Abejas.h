@@ -1,8 +1,8 @@
 /*
-* Proyecto Invernadero
+* Proyecto Invernadero (segunda parte)
 * Frida Arcadia Luna
 * A01711615
-* 30 de noviembre 2023
+* 13 de mayo 2024
 */
 
 /**
