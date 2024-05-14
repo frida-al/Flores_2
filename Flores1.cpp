@@ -9,7 +9,8 @@
 * Proyecto para Pensamiento Computacional Orientado a Objetos
 *Es un programa que proporciona información acerca de tres tipos de plantas 
 *(flores, plantas medicinales y árboles frutales) y puede calcular la cantidad 
-*de agua que necesitan las flores en cada estación del año (input del usuario) y cuánto miden los 
+*de agua que necesitan las flores en cada estación del año (input del usuario), si las flores han
+*estado en contacto con abejas, mediante una clase de composición (input del usuario) y cuánto miden los 
 *árboles frutales de acuerdo a su edad (input del usuario)
 */
 
