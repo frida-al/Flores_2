@@ -36,19 +36,19 @@ int main(){
     std::string bees; // variable string
 
     // Objetos clase 1:
-    Flores flor1("Rose bush", 2, "red", 15.0);
-    Flores flor2("Gardenia", 3, "white", 0.016);
-    Flores flor3("Tulip", 4, "purple", 2.0 );
+    Flores flor1("Peony", 1, "pink", 8.0);
+    Flores flor2("Forget-me-not", 2, "blue", 4.0);
+    Flores flor3("Carnation", 5, "white", 3.0 );
 
     // Objetos clase 2:
-    Medicinales planta1("Arnica", 1, "Europe", "Anti-inflamatory"); 
-    Medicinales planta2("Peppermint", 2, "Western Europe", "Gastrointestinal diseases");
-    Medicinales planta3("Aloe Vera", 4, "Africa", "Burns and wounds");
+    Medicinales planta1("Calendula", 2, "Egypt", "Anti-inflamatory"); 
+    Medicinales planta2("Rosemary", 1, "Mediterranean", "Antibacterial");
+    Medicinales planta3("Lemon balm", 1, "Central Asia", "Stress and anxiety");
 
     //Objetos clase 3:
-    Fruit frutal1("Peach", 5, "Tree","July-August", 0); 
-    Fruit frutal2("Orange", 6, "Tree","September-April", 0);
-    Fruit frutal3("Cherry", 7, "Tree","March-April", 0);
+    Fruit frutal1("Pomegranate", 5, "Tree","September", 0); 
+    Fruit frutal2("Tangerine", 6, "Tree","October-December", 0);
+    Fruit frutal3("Fig", 3, "Tree","August-October", 0);
 
     //Ciclo para que el sistema siga corriendo mientras no se elija la opción "Exit"
     while (continua == true)
