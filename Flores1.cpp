@@ -149,9 +149,9 @@ int main(){
             frutal2.height(18, years);
             frutal3.height(12, years);
             // Se imprime la altura del árbol dependiendo de su edad
-            std::cout << "The Peach tree is " << frutal1.get_altura() << " inches tall" << std::endl;
-            std::cout << "The Orange tree is " << frutal2.get_altura() << " inches tall" << std::endl;
-            std::cout << "The Cherry tree is " << frutal3.get_altura() << " inches tall" << std::endl;
+            std::cout << "The Pomegranate tree is " << frutal1.get_altura() << " inches tall" << std::endl;
+            std::cout << "The Tangerine tree is " << frutal2.get_altura() << " inches tall" << std::endl;
+            std::cout << "The Fig tree is " << frutal3.get_altura() << " inches tall" << std::endl;
         }
     } 
     else if (res == 4){ //Opción "Exit"
