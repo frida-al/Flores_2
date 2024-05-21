@@ -2,7 +2,7 @@
 * Proyecto Invernadero (segunda parte)
 * Frida Arcadia Luna
 * A01711615
-* 13 de mayo 2024
+* 21 de mayo 2024
 */
 
 /*
@@ -21,13 +21,10 @@
 //Declaración de clase Planta
 class Planta { 
 
-    private: 
-    // Declara las variables de instancia
-    std::string nombre;
-
     public: 
-    // Atributo público
+    // Atributos público
     int edad; 
+    std::string nombre;
     /**
      *  Constructor por default 
      * 
@@ -48,47 +45,6 @@ class Planta {
     void set_edad (int); 
     int get_edad(); 
 };
-/**
- * setter de variable nombre
- * Asigna a la variable un string que recibe del Objeto
- * 
- * @param nom
- * @return
- */
-void Planta::set_nombre(std::string nom){ 
-    // parametro: variable de instancia
-    nombre = nom;
-}
-/**
- * getter de variable nombre
- * regresa nombre
- * 
- * @param
- * @return nombre
-*/
-std::string Planta::get_nombre(){ 
-    return nombre;
-}
-/**
- * setter de variable edad
- * Asigna a la variable un entero que recibe del Objeto
- * 
- * @param ed
- * @return
- */
-void Planta::set_edad(int ed){ 
-    edad = ed;
-}
-/**
- * getter de variable edad
- * regresa edad
- * 
- * @param
- * @return edad
-*/
-int Planta::get_edad(){ 
-    return edad;
-}
 
 // Declaración clase Flores que hereda de clase Plantas
 class Flores:public Planta{ 
@@ -123,6 +79,10 @@ class Flores:public Planta{
     void riego(std::string);
     Abejas get_abejas();
     void set_abejas(std::string);
+    void set_nombre (std::string); 
+    std::string get_nombre(); 
+    void set_edad (int); 
+    int get_edad(); 
 
 };
 /**
@@ -198,6 +158,47 @@ void Flores::set_abejas(std::string bees){
 Abejas Flores::get_abejas(){
     return poliniza;
 }
+/**
+ * setter de variable nombre
+ * Asigna a la variable un string que recibe del Objeto
+ * 
+ * @param nom
+ * @return
+ */
+void Flores::set_nombre(std::string nom){ 
+    // parametro: variable de instancia
+    nombre = nom;
+}
+/**
+ * getter de variable nombre
+ * regresa nombre
+ * 
+ * @param
+ * @return nombre
+*/
+std::string Flores::get_nombre(){ 
+    return nombre;
+}
+/**
+ * setter de variable edad
+ * Asigna a la variable un entero que recibe del Objeto
+ * 
+ * @param ed
+ * @return
+ */
+void Flores::set_edad(int ed){ 
+    edad = ed;
+}
+/**
+ * getter de variable edad
+ * regresa edad
+ * 
+ * @param
+ * @return edad
+*/
+int Flores::get_edad(){ 
+    return edad;
+}
 
 //Declaración de clase Medicinales que hereda de clase Plantas
 class Medicinales:public Planta{ 
@@ -227,6 +228,10 @@ class Medicinales:public Planta{
     std::string get_origen();
     void set_uso(std::string);
     std::string get_uso();
+    void set_nombre (std::string); 
+    std::string get_nombre(); 
+    void set_edad (int); 
+    int get_edad(); 
 };
 /**
  * Setter de variable origen
@@ -268,6 +273,47 @@ void Medicinales::set_uso(std::string use){
 std::string Medicinales::get_uso(){ 
     return uso;
 }
+/**
+ * setter de variable nombre
+ * Asigna a la variable un string que recibe del Objeto
+ * 
+ * @param nom
+ * @return
+ */
+void Medicinales::set_nombre(std::string nom){ 
+    // parametro: variable de instancia
+    nombre = nom;
+}
+/**
+ * getter de variable nombre
+ * regresa nombre
+ * 
+ * @param
+ * @return nombre
+*/
+std::string Medicinales::get_nombre(){ 
+    return nombre;
+}
+/**
+ * setter de variable edad
+ * Asigna a la variable un entero que recibe del Objeto
+ * 
+ * @param ed
+ * @return
+ */
+void Medicinales::set_edad(int ed){ 
+    edad = ed;
+}
+/**
+ * getter de variable edad
+ * regresa edad
+ * 
+ * @param
+ * @return edad
+*/
+int Medicinales::get_edad(){ 
+    return edad;
+}
 
 //Clase Fruit
 class Fruit:public Planta{ 
@@ -301,6 +347,10 @@ class Fruit:public Planta{
     void set_altura(int);
     int get_altura();
     void height(int, int);
+    void set_nombre (std::string); 
+    std::string get_nombre(); 
+    void set_edad (int); 
+    int get_edad(); 
 };
 /**
  * Setter de variable type
@@ -374,5 +424,46 @@ void Fruit::height(int pulg, int years){
     altura = (years * pulg);
     
 }
+}
+/**
+ * setter de variable nombre
+ * Asigna a la variable un string que recibe del Objeto
+ * 
+ * @param nom
+ * @return
+ */
+void Fruit::set_nombre(std::string nom){ 
+    // parametro: variable de instancia
+    nombre = nom;
+}
+/**
+ * getter de variable nombre
+ * regresa nombre
+ * 
+ * @param
+ * @return nombre
+*/
+std::string Fruit::get_nombre(){ 
+    return nombre;
+}
+/**
+ * setter de variable edad
+ * Asigna a la variable un entero que recibe del Objeto
+ * 
+ * @param ed
+ * @return
+ */
+void Fruit::set_edad(int ed){ 
+    edad = ed;
+}
+/**
+ * getter de variable edad
+ * regresa edad
+ * 
+ * @param
+ * @return edad
+*/
+int Fruit::get_edad(){ 
+    return edad;
 }
 #endif // PLANTA_H
