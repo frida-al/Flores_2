@@ -24,4 +24,4 @@ El programa solo corre en la consola y esta hecho con c++ standard por lo que co
 ## Correcciones
 Versión 1.0: 13 de mayo de 2024. El programa cuenta inicialmente con 4 clases de plantas, de las cuales 3 heredan de la clase principal y la clase de composición *abejas*, además del main. 
 
-Versión 2.0: 21 de mayo de 2024. El archivo Planta.h se actualizó mediante la utilización de sobreescritura y sobrecarga. Es, además, el archivo que contiene la herencia.
+Versión 2.0: 21 de mayo de 2024. El archivo **Planta.h** se actualizó mediante la utilización de sobreescritura y sobrecarga. Es, además, el archivo que contiene la herencia. Se actualizó el UML con los métodos de la sobreescritura en las clases hijas.
