@@ -22,7 +22,7 @@
 class Planta { 
 
     public: 
-    // Atributos público
+    // Atributos públicos
     int edad; 
     std::string nombre;
     /**
