@@ -25,3 +25,5 @@ El programa solo corre en la consola y esta hecho con c++ standard por lo que co
 Versión 1.0: 13 de mayo de 2024. El programa cuenta inicialmente con 4 clases de plantas, de las cuales 3 heredan de la clase principal y la clase de composición *abejas*, además del main. 
 
 Versión 2.0: 21 de mayo de 2024. El archivo **Planta.h** se actualizó mediante la utilización de sobreescritura y sobrecarga. Es, además, el archivo que contiene la herencia. Se actualizó el UML con los métodos de la sobreescritura en las clases hijas.
+
+Versión 3.0: 28 de mayo de 2024. Las modificaciones de esta versión fueron para implementar polimorfismo. En primer lugar, los métodos get_nombre y get_edad se modificaron a virtual. En segundo lugar, se creo una clase llama **Invernadero.h** donde se creó un arreglo tipo Planta para implementar el polimorfismo. En tercer lugar, se creó una nueva opción en el menú, que es "All names and ages" para mandar a llamar los métodos get_nombre y get_edad de todas las plantas (polimorfismo). Por último, se actualizó el UML. 
