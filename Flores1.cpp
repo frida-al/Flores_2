@@ -1,16 +1,15 @@
 /*
-* Proyecto Invernadero (segunda parte)
+* Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 13 de mayo 2024
+* 28 de mayo 2024
 */
 
 /*
-* Proyecto para Pensamiento Computacional Orientado a Objetos
+* Proyecto para Programación Orientada a Objetos
 *Es un programa que proporciona información acerca de tres tipos de plantas 
 *(flores, plantas medicinales y árboles frutales) y puede calcular la cantidad 
-*de agua que necesitan las flores en cada estación del año (input del usuario), si las flores han
-*estado en contacto con abejas, mediante una clase de composición (input del usuario) y cuánto miden los 
+*de agua que necesitan las flores en cada estación del año (input del usuario) y cuánto miden los 
 *árboles frutales de acuerdo a su edad (input del usuario)
 */
 
@@ -18,6 +17,7 @@
 #include <iostream> //para imprimir
 #include <string> //para usar strings
 #include "Planta.h" // clases de mi proyecto
+#include "Invernadero.h" // clase que implementa polimorfismo
 
 //Función menú
 void menu(){
@@ -26,7 +26,8 @@ void menu(){
     std::cout << "1) Flowers" << std::endl;
     std::cout << "2) Medicinal plants" <<std::endl;
     std::cout << "3) Fruit trees" <<std::endl;
-    std::cout << "4) Exit" <<std::endl;
+    std::cout << "4) All names and ages" <<std::endl;
+    std::cout << "5) Exit" <<std::endl;
 }
 
 int main(){
@@ -34,7 +35,7 @@ int main(){
     std::string temporada; //variable string
     bool continua = true; //variable para ciclar el programa
     std::string bees; // variable string
-
+    Invernadero inverna; // Objeto tipo invernadero
     // Objetos clase 1:
     Flores flor1("Peony", 1, "pink", 8.0);
     Flores flor2("Forget-me-not", 2, "blue", 4.0);
@@ -153,11 +154,16 @@ int main(){
             std::cout << "The Tangerine tree is " << frutal2.get_altura() << " inches tall" << std::endl;
             std::cout << "The Fig tree is " << frutal3.get_altura() << " inches tall" << std::endl;
         }
-    } 
-    else if (res == 4){ //Opción "Exit"
-        std::cout << "Good bye";
-        continua = false;
     }
+    else if (res == 4){ // Opción "All names and ages". Polimorfismo
+        inverna.crea_ejemplos();
+        inverna.imprime_ejemplos();
+        }
+    
+    else if (res == 5){ //Opción "Exit"
+        std::cout << "Good bye" << std::endl;
+        continua = false;
+        }
     }
             return 0;
 }            
