@@ -1,8 +1,8 @@
 /*
-* Proyecto Invernadero (segunda parte)
+* Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 21 de mayo 2024
+* 28 de mayo 2024
 */
 
 /*
@@ -20,11 +20,13 @@
 
 //Declaración de clase Planta
 class Planta { 
-
-    public: 
-    // Atributos públicos
+    // Atributos protegidos
+    protected:
     int edad; 
     std::string nombre;
+    public: 
+    // Atributos públicos
+    
     /**
      *  Constructor por default 
      * 
@@ -40,10 +42,15 @@ class Planta {
      */ 
     Planta(std::string nom, int ed): nombre(nom), edad(ed){};
     // Métodos miembro de la clase
-    void set_nombre (std::string); 
-    std::string get_nombre(); 
-    void set_edad (int); 
-    int get_edad(); 
+    void set_nombre (std::string nom);
+    // POLIMORFISMO
+    virtual std::string get_nombre(){
+        return nombre;
+    } 
+    void set_edad (int ed);
+    virtual int get_edad(){
+        return edad;
+    } 
 };
 
 // Declaración clase Flores que hereda de clase Plantas
