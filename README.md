@@ -9,7 +9,8 @@ El programa imprime un menú que le permite al usuario elegir qué información 
 1. Flores
 2. Plantas medicinales
 3. Árboles frutales
-Una vez realizada la elección, se puede acceder a más información acerca de cada tipo de planta. Si el usuario escoge *flores* podrá calcular el riego y si las flores han estado en contacto con las abejas o *árboles frutales*, se podrá calcular la altura.
+4. Todos los nombres y edades (**nuevo**)
+Una vez realizada la elección, se puede acceder a más información acerca de cada tipo de planta. Si el usuario escoge *flores* podrá calcular el riego y si las flores han estado en contacto con las abejas o *árboles frutales*, se podrá calcular la altura. La opción múmero cuatro muestra los nombres y edades de todas las plantas.
 ### Casos que harían que el proyecto deje de funcionar:
 1) Cuando pide que se seleccione una opción del menú (que son solo números), si se escribe una palabra el programa se ciclará infinitamente.
 2) Si se escoge un número que no está entre las opciones que se presentan, solo se ciclará el menú hasta que escoja una opción correcta.
