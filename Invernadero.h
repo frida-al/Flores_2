@@ -46,23 +46,23 @@ class Invernadero{
      */
 void Invernadero::crea_ejemplos(){
     if (cont < 9){
-        planta[cont] = new Flores("Peony", 1, "pink", 8.0);
+        planta[cont] = new Flores ("Peony", 1, "pink", 8.0);
         cont++;
-        planta[cont] = new Flores("Forget-me-not", 2, "blue", 4.0);
+        planta[cont] = new Flores ("Forget-me-not", 2, "blue", 4.0);
         cont++;
-        planta[cont] = new Flores("Carnation", 5, "white", 3.0);
+        planta[cont] = new Flores ("Carnation", 5, "white", 3.0 );
         cont++;
-        planta[cont] = new Medicinales("Calendula", 2, "Egypt", "Anti-inflamatory");
+        planta[cont] = new Medicinales ("Calendula", 2, "Egypt", "Anti-inflamatory");
         cont++;
-        planta[cont] = new Medicinales("Rosemary", 1, "Mediterranean", "Antibacterial");
+        planta[cont] = new Medicinales ("Rosemary", 1, "Mediterranean", "Antibacterial");
         cont++; 
-        planta[cont] = new Medicinales("Lemon balm", 1, "Central Asia", "Stress and anxiety");
+        planta[cont] = new Medicinales ("Lemon balm", 1, "Central Asia", "Stress and anxiety");
         cont++;
-        planta[cont] = new Fruit("Pomegranate", 5, "Tree","September", 0);
+        planta[cont] = new Fruit ("Pomegranate", 5, "Tree","September", 0);
         cont++;
-        planta[cont] = new Fruit("Tangerine", 6, "Tree","October-December", 0);
+        planta[cont] = new Fruit ("Tangerine", 6, "Tree","October-December", 0);
         cont++;
-        planta[cont] = new Fruit("Fig", 3, "Tree","August-October", 0);
+        planta[cont] = new Fruit ("Fig", 3, "Tree","August-October", 0);
     }
 }
     /**
@@ -74,8 +74,7 @@ void Invernadero::crea_ejemplos(){
      */
 void Invernadero::imprime_ejemplos(){
     for(int i = 0; i < cont; i++){
-        std::cout << planta[i]->get_nombre() << ", ";
-        std::cout << planta[i]->get_edad() << std:: endl;
+        planta[i]->imprime_atributos();
     }
 }
 #endif
