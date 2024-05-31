@@ -2,7 +2,7 @@
 * Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 28 de mayo 2024
+* 31 de mayo 2024
 */
 
 /*
@@ -16,8 +16,8 @@
 //Bibliotecas 
 #include <iostream> //para imprimir
 #include <string> //para usar strings
-#include "Planta_copia.h" // clases de mi proyecto
-#include "Invernadero_copia.h" // clase que implementa polimorfismo
+#include "Planta.h" // clases de mi proyecto
+#include "Invernadero.h" // clase que implementa polimorfismo
 
 //Función menú
 void menu(){
@@ -114,25 +114,10 @@ int main(){
             std::cout << "It helps with " << med3.get_uso() << std::endl;
         }
     }  
-    else if (res == 3){ // Opcion "Fruit trees"
-        std::cout << "Fruit trees. What do you want to know?" << std::endl <<"1) Fruit plant 1" << std::endl << "2) Fruit plant 2" << std::endl << "3) Fruit plant 3" << std::endl << "4) Height" << std::endl;
+    else if (res == 4){ // Opcion "Fruit trees"
+        std::cout << std::endl << "1) Calculate Height" << std::endl;
         std::cin >> res3;
-        if (res3 == 1){ // Se imprimen todos los atributos del frutal 1
-            std::cout << "The fruit is " << frutal1.get_nombre() << std::endl;
-            std::cout << "It is a " << frutal1.get_type() << std::endl;
-            std::cout << "It bears fruit on " << frutal1.get_time() << std::endl;
-        }
-        else if (res3 == 2){ //Se imprimen todos los atributos del frutal 2
-            std::cout << "The fruit is " << frutal2.get_nombre() << std::endl;
-            std::cout << "It is a " << frutal2.get_type() << std::endl;
-            std::cout << "It bears fruit on " << frutal2.get_time() << std::endl;
-        }
-        else if (res3 == 3){ // Se imprimen todos los atributos del frutal 3
-            std::cout << "The fruit is " << frutal3.get_nombre() << std::endl;
-            std::cout << "It is a " << frutal3.get_type() << std::endl;
-            std::cout << "It bears fruit on " << frutal3.get_time() << std::endl;
-        }
-        else if (res3 == 4){ //Se solicita el input: "¿cuál es la edad del árbol?"
+        if (res3 == 1){  //Se solicita el input: "¿cuál es la edad del árbol?"
             std::cout << "Age of the tree: "; 
             std::cin >> years;
             frutal1.height(20, years);
