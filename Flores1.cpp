@@ -16,17 +16,17 @@
 //Bibliotecas 
 #include <iostream> //para imprimir
 #include <string> //para usar strings
-#include "Planta.h" // clases de mi proyecto
-#include "Invernadero.h" // clase que implementa polimorfismo
+#include "Planta_copia.h" // clases de mi proyecto
+#include "Invernadero_copia.h" // clase que implementa polimorfismo
 
 //Función menú
 void menu(){
     //Imprime las opciones que va a tener el programa
     std::cout << "\nMenu: " << std::endl;
-    std::cout << "1) Flowers" << std::endl;
-    std::cout << "2) Medicinal plants" <<std::endl;
-    std::cout << "3) Fruit trees" <<std::endl;
-    std::cout << "4) All names and ages" <<std::endl;
+    std::cout << "1) Get all" << std::endl;
+    std::cout << "2) Flowers" <<std::endl;
+    std::cout << "3) Medicinal plants" <<std::endl;
+    std::cout << "4) Fruit plants" <<std::endl;
     std::cout << "5) Exit" <<std::endl;
 }
 
@@ -42,9 +42,9 @@ int main(){
     Flores flor3("Carnation", 5, "white", 3.0 );
 
     // Objetos clase 2:
-    Medicinales planta1("Calendula", 2, "Egypt", "Anti-inflamatory"); 
-    Medicinales planta2("Rosemary", 1, "Mediterranean", "Antibacterial");
-    Medicinales planta3("Lemon balm", 1, "Central Asia", "Stress and anxiety");
+    Medicinales med1("Calendula", 2, "Egypt", "Anti-inflamatory"); 
+    Medicinales med2("Rosemary", 1, "Mediterranean", "Antibacterial");
+    Medicinales med3("Lemon balm", 1, "Central Asia", "Stress and anxiety");
 
     //Objetos clase 3:
     Fruit frutal1("Pomegranate", 5, "Tree","September", 0); 
@@ -61,25 +61,14 @@ int main(){
     std::cin >> res; 
 
     //Dependiendo del input, se realizan ciertas operaciones
-    if (res == 1){ // Opción "Flowers"
-        std::cout << "Flowers. What do you want to know?" << std::endl << "1) Flower 1" << std::endl << "2) Flower 2"<< std::endl << "3) Flower 3" << std::endl << "4) Irrigation" << std::endl << "5) Pollination" << std::endl;
+    if (res == 1){ // Opción "All names and ages". Polimorfismo
+        inverna.crea_ejemplos();
+        inverna.imprime_ejemplos();
+        }
+    else if (res == 2){ // Opción "Flowers"
+        std::cout << "Flowers. What do you want to know?" << std::endl << "1) Irrigation" << std::endl << "2) Pollination" << std::endl;
         std::cin >> res1; 
-        if (res1 == 1){ //Se imprimen todos los atributos de la flor 1
-            std::cout << "The flower 1 is " << flor1.get_color() << std::endl;
-            std::cout << "The flower 1 is " << flor1.get_edad() << " years old" << std::endl;
-            std::cout << "The flower 1 is " << flor1.get_nombre() << std::endl;     
-        }
-        else if (res1 == 2){ //Se imprimen todos los atributos de la flor 2
-            std::cout << "The flower 2 is " << flor2.get_color() << std::endl;
-            std::cout << "The flower 2 is " << flor2.get_edad() << " years old" << std::endl;
-            std::cout << "The flower 2 is " << flor2.get_nombre() << std::endl; 
-        }
-        else if (res1 == 3){ //Se imprimen todos los atributos de la flor 3
-            std::cout << "The flower 3 is " << flor3.get_color() << std::endl;
-            std::cout << "The flower 3 is " << flor3.get_edad() << " years old" << std::endl;
-            std::cout << "The flower 3 is " << flor3.get_nombre() << std::endl;
-        }
-        else if (res1 == 4){ //Se solicita el input: "¿en qué estación del año quiere calcular?"
+        if (res1 == 1){ //Se solicita el input: "¿en qué estación del año quiere calcular?"
             std::cout << "Season: "; 
             std::cin >> temporada;
             flor1.riego(temporada);
@@ -90,7 +79,7 @@ int main(){
             std::cout << "The flower 2 needs " << flor2.get_litros() <<  " liters per week" << std::endl;
             std::cout << "The flower 3 needs " << flor3.get_litros() <<  " liters per week" << std::endl;
         }
-        else if (res1 == 5){ // Se solicita el input: "¿Ha habido contacto entre flores y abejas?"
+        else if (res1 == 2){ // Se solicita el input: "¿Ha habido contacto entre flores y abejas?"
             std::cout << "Were there bees with the flowers? Answer Yes or No ";
             std::cin >> bees;
             flor1.set_abejas(bees);
@@ -103,26 +92,26 @@ int main(){
             std::cout << flor3.get_abejas().get_abejas() << std::endl;
         }
     }
-    else if (res == 2){ //Opción "Medicinal plants"
+    else if (res == 3){ //Opción "Medicinal plants"
         std::cout << "Medicinal plants. What do you want to know?" << std::endl <<"1) Plant 1" << std::endl << "2) Plant 2" << std::endl << "3) Plant 3" << std::endl;
         std::cin >> res2;
         if (res2 == 1){ // Se imprimen todos los atributos de la planta 1
-            std::cout << "The plant is " << planta1.get_nombre() << std::endl;
-            std::cout << "It is " << planta1.get_edad() << " year old" <<std::endl;
-            std::cout << "It is from " << planta1.get_origen() << std::endl;
-            std::cout << "It is " << planta1.get_uso() << std::endl;
+            std::cout << "The plant is " << med1.get_nombre() << std::endl;
+            std::cout << "It is " << med1.get_edad() << " year old" <<std::endl;
+            std::cout << "It is from " << med1.get_origen() << std::endl;
+            std::cout << "It is " << med1.get_uso() << std::endl;
         }
         else if (res2 == 2){ //Se imprimen todos los atributos de la planta 2
-            std::cout << "The plant is " << planta2.get_nombre() << std::endl;
-            std::cout << "It is " << planta1.get_edad() << " years old" <<std::endl;
-            std::cout << "It is from " << planta2.get_origen() << std::endl;
-            std::cout << "It helps with " << planta2.get_uso() << std::endl;
+            std::cout << "The plant is " << med2.get_nombre() << std::endl;
+            std::cout << "It is " << med2.get_edad() << " years old" <<std::endl;
+            std::cout << "It is from " << med2.get_origen() << std::endl;
+            std::cout << "It helps with " << med2.get_uso() << std::endl;
         }
         else if (res2 == 3){ //Se imprimen todos los atributos de la planta 3
-            std::cout << "The plant is " << planta3.get_nombre() << std::endl;
-            std::cout << "It is " << planta1.get_edad() << " year old" <<std::endl;
-            std::cout << "It is from " << planta3.get_origen() << std::endl;
-            std::cout << "It helps with " << planta3.get_uso() << std::endl;
+            std::cout << "The plant is " << med3.get_nombre() << std::endl;
+            std::cout << "It is " << med3.get_edad() << " year old" <<std::endl;
+            std::cout << "It is from " << med3.get_origen() << std::endl;
+            std::cout << "It helps with " << med3.get_uso() << std::endl;
         }
     }  
     else if (res == 3){ // Opcion "Fruit trees"
@@ -155,11 +144,6 @@ int main(){
             std::cout << "The Fig tree is " << frutal3.get_altura() << " inches tall" << std::endl;
         }
     }
-    else if (res == 4){ // Opción "All names and ages". Polimorfismo
-        inverna.crea_ejemplos();
-        inverna.imprime_ejemplos();
-        }
-    
     else if (res == 5){ //Opción "Exit"
         std::cout << "Good bye" << std::endl;
         continua = false;
