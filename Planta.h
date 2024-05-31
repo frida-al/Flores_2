@@ -42,17 +42,10 @@ class Planta {
      */ 
     Planta(std::string nom, int ed): nombre(nom), edad(ed){};
     // Métodos miembro de la clase
-    void set_nombre (std::string nom);
-    // POLIMORFISMO
-    virtual std::string get_nombre(){
-        return nombre;
-    } 
-    void set_edad (int ed);
-    virtual int get_edad(){
-        return edad;
-    } 
+    virtual void imprime_atributos(){
+        std::cout << "Hi!";
+    }
 };
-
 // Declaración clase Flores que hereda de clase Plantas
 class Flores:public Planta{ 
     
@@ -90,8 +83,14 @@ class Flores:public Planta{
     std::string get_nombre(); 
     void set_edad (int); 
     int get_edad(); 
+    void imprime_atributos();
 
 };
+void Flores::imprime_atributos(){
+    std::cout << "Name: " << nombre << std::endl;
+    std::cout << "Age: " << edad << std::endl;
+    std::cout << "Color: " << color << std::endl;
+}
 /**
  * setter de variable color
  * Asigna a la variable un string que recibe del Objeto
@@ -239,7 +238,14 @@ class Medicinales:public Planta{
     std::string get_nombre(); 
     void set_edad (int); 
     int get_edad(); 
+    void imprime_atributos();
 };
+void Medicinales::imprime_atributos(){
+    std::cout << "Name: " << nombre << std::endl;
+    std::cout << "Age: " << edad << std::endl;
+    std::cout << "Origin: " << origen << std::endl;
+    std::cout << "Use: " << uso << std::endl;
+}
 /**
  * Setter de variable origen
  * Asigna un string a la variable
@@ -358,7 +364,13 @@ class Fruit:public Planta{
     std::string get_nombre(); 
     void set_edad (int); 
     int get_edad(); 
+    void imprime_atributos();
 };
+void Fruit::imprime_atributos(){
+    std::cout << "Name: " << nombre << std::endl;
+    std::cout << "Age: " << edad << std::endl;
+    std::cout << "Type: " << type << std::endl;
+}
 /**
  * Setter de variable type
  * Asigna un string a la variable
