@@ -86,6 +86,13 @@ class Flores:public Planta{
     void imprime_atributos();
 
 };
+/**
+ * Función imprime_atributos
+ * Imprime los atributos de la clase, para usar polimorfismo
+ * 
+ * @param 
+ * @return
+ */
 void Flores::imprime_atributos(){
     std::cout << "Name: " << nombre << std::endl;
     std::cout << "Age: " << edad << std::endl;
@@ -240,6 +247,13 @@ class Medicinales:public Planta{
     int get_edad(); 
     void imprime_atributos();
 };
+/**
+ * Función imprime_atributos
+ * Imprime los atributos de la clase, para usar polimorfismo
+ * 
+ * @param 
+ * @return
+ */
 void Medicinales::imprime_atributos(){
     std::cout << "Name: " << nombre << std::endl;
     std::cout << "Age: " << edad << std::endl;
@@ -366,6 +380,13 @@ class Fruit:public Planta{
     int get_edad(); 
     void imprime_atributos();
 };
+/**
+ * Función imprime_atributos
+ * Imprime los atributos de la clase, para usar polimorfismo
+ * 
+ * @param 
+ * @return
+ */
 void Fruit::imprime_atributos(){
     std::cout << "Name: " << nombre << std::endl;
     std::cout << "Age: " << edad << std::endl;
