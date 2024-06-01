@@ -6,8 +6,8 @@
 */
 
 /*
-* En este archivo se encuentra la clase Invernadero, que facilita los getters 
-* de nombre y edad de todas las plantas, sin importar la clase. Esto debido al polimorfismo.
+* En este archivo se encuentra la clase Invernadero, que imprime todos los atributos
+* de todas las clases. Esto debido al polimorfismo.
 */
 #ifndef INVERNADERO_H
 #define INVERNADERO_H
@@ -33,7 +33,7 @@ class Invernadero{
          */
         Invernadero(): cont(0){};
         //Métodos miembro de la clase
-        void crea_ejemplos();
+        void agrega_ejemplos(Planta *);
         void imprime_ejemplos();
     };
 
@@ -44,25 +44,10 @@ class Invernadero{
      * @param 
      * @return
      */
-void Invernadero::crea_ejemplos(){
+void Invernadero::agrega_ejemplos(Planta * objeto){
     if (cont < 9){
-        planta[cont] = new Flores ("Peony", 1, "pink", 8.0);
+        planta[cont] = objeto;
         cont++;
-        planta[cont] = new Flores ("Forget-me-not", 2, "blue", 4.0);
-        cont++;
-        planta[cont] = new Flores ("Carnation", 5, "white", 3.0 );
-        cont++;
-        planta[cont] = new Medicinales ("Calendula", 2, "Egypt", "Anti-inflamatory");
-        cont++;
-        planta[cont] = new Medicinales ("Rosemary", 1, "Mediterranean", "Antibacterial");
-        cont++; 
-        planta[cont] = new Medicinales ("Lemon balm", 1, "Central Asia", "Stress and anxiety");
-        cont++;
-        planta[cont] = new Fruit ("Pomegranate", 5, "Tree","September", 0);
-        cont++;
-        planta[cont] = new Fruit ("Tangerine", 6, "Tree","October-December", 0);
-        cont++;
-        planta[cont] = new Fruit ("Fig", 3, "Tree","August-October", 0);
     }
 }
     /**
