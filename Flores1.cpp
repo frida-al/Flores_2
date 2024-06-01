@@ -51,6 +51,16 @@ int main(){
     Fruit frutal2("Tangerine", 6, "Tree","October-December", 0);
     Fruit frutal3("Fig", 3, "Tree","August-October", 0);
 
+    Planta * planta1 = new Flores(flor1);
+    Planta * planta2 = new Flores(flor2);
+    Planta * planta3 = new Flores(flor3);
+    Planta * planta4 = new Medicinales(med1);
+    Planta * planta5 = new Medicinales(med2);
+    Planta * planta6 = new Medicinales(med3);
+    Planta * planta7 = new Fruit(frutal1);
+    Planta * planta8 = new Fruit(frutal2);
+    Planta * planta9 = new Fruit(frutal3);
+
     //Ciclo para que el sistema siga corriendo mientras no se elija la opción "Exit"
     while (continua == true)
     {    
@@ -62,7 +72,15 @@ int main(){
 
     //Dependiendo del input, se realizan ciertas operaciones
     if (res == 1){ // Opción "All names and ages". Polimorfismo
-        inverna.crea_ejemplos();
+        inverna.agrega_ejemplos(planta1);
+        inverna.agrega_ejemplos(planta2);
+        inverna.agrega_ejemplos(planta3);
+        inverna.agrega_ejemplos(planta4);
+        inverna.agrega_ejemplos(planta5);
+        inverna.agrega_ejemplos(planta6);
+        inverna.agrega_ejemplos(planta7);
+        inverna.agrega_ejemplos(planta8);
+        inverna.agrega_ejemplos(planta9);
         inverna.imprime_ejemplos();
         }
     else if (res == 2){ // Opción "Flowers"
@@ -135,4 +153,4 @@ int main(){
         }
     }
             return 0;
-}            
+}           
