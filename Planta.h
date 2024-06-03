@@ -42,9 +42,7 @@ class Planta {
      */ 
     Planta(std::string nom, int ed): nombre(nom), edad(ed){};
     // Métodos miembro de la clase
-    virtual void imprime_atributos(){
-        std::cout << "Hi!";
-    }
+    virtual void imprime_atributos() = 0;
 };
 // Declaración clase Flores que hereda de clase Plantas
 class Flores:public Planta{ 
