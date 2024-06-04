@@ -2,7 +2,7 @@
 * Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 31 de mayo 2024
+* 03 de junio 2024
 */
 
 /*
@@ -19,10 +19,11 @@
 
 //Declaración de clase Invernadero
 class Invernadero{
-    // Atributos privados
+    // Declaro las variables privadas de instancia
     private:
-        Planta * planta[9]; // Arreglo tipo Planta
+        Planta * planta[9]; // Apuntador tipo Planta para usar polimorfismo
         int cont;
+
     // Atributos públicos     
     public:
         /**
@@ -35,15 +36,15 @@ class Invernadero{
         //Métodos miembro de la clase
         void agrega_ejemplos(Planta *);
         void imprime_ejemplos();
-    };
+};
 
     /**
-     * Función crea ejemplos
-     * Crea tres objetos de cada una de las clases en la memoria dinámica para el correcto funcionamiento del polimorfismo
-     * 
-     * @param 
-     * @return
-     */
+    * Función crea ejemplos
+    * Crea tres objetos de cada una de las clases en la memoria dinámica para el correcto funcionamiento del polimorfismo
+    * 
+    * @param 
+    * @return
+    */
 void Invernadero::agrega_ejemplos(Planta * objeto){
     if (cont < 9){
         planta[cont] = objeto;
@@ -51,15 +52,15 @@ void Invernadero::agrega_ejemplos(Planta * objeto){
     }
 }
     /**
-     * Función imprime ejemplos
-     * Se encarga de imprimir los getters de nombre y edad
-     * 
-     * @param 
-     * @return
-     */
+    * Función imprime ejemplos
+    * Se encarga de imprimir los getters de nombre y edad
+    * 
+    * @param 
+    * @return
+    */
 void Invernadero::imprime_ejemplos(){
     for(int i = 0; i < cont; i++){
         planta[i]->imprime_atributos();
     }
 }
-#endif
+#endif // INVERNADERO_H
