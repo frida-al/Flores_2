@@ -1,8 +1,8 @@
 /*
-* Proyecto Invernadero (segunda parte)
+* Proyecto Invernadero 
 * Frida Arcadia Luna
 * A01711615
-* 28 de mayo 2024
+* 03 de junio 2024
 */
 
 /**
@@ -16,8 +16,8 @@
 
 class Abejas {
 
+    //Declara la variable privada de instancia
     private:
-    //Declara la variable de instancia
         std::string abejas; 
 
     public:
