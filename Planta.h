@@ -7,9 +7,9 @@
 
 /*
 * En este archivo se encuentra la clase Planta, que es la clase padre, 
-*junto con 3 clases hijas, que son Fruit, Medicinales y Flores. De la clase 
-*padre se heredan los atributos nombre y edad, y cada clase hija agrega 
-*atributos y métodos propios.
+* junto con 3 clases hijas, que son Fruit, Medicinales y Flores. De la clase 
+* padre se heredan los atributos nombre y edad, además del método imprime_atributos, 
+* que implementa polimorfismo. Cada clase hija agrega atributos y métodos propios.
 */
 
 #ifndef PLANTA_H
@@ -18,9 +18,10 @@
 #include <string>
 #include "Abejas.h" 
 
-//Declaración de clase Planta
+//Declaración de clase Planta que es abstracta
 class Planta { 
-    // Atributos protegidos
+
+    //Declaro las variables protegidas de instancia
     protected:
     int edad; 
     std::string nombre;
@@ -42,13 +43,13 @@ class Planta {
      */ 
     Planta(std::string nom, int ed): nombre(nom), edad(ed){};
     // Métodos miembro de la clase
-    virtual void imprime_atributos() = 0;
+    virtual void imprime_atributos() = 0;  //Método abstracto que será sobreescrito
 };
-// Declaración clase Flores que hereda de clase Plantas
+// Declaración clase Flores que hereda de clase Planta
 class Flores:public Planta{ 
-    
+
+    //Declaro las variables privadas de instancia
     private: 
-    //Declara las variables de instancia
     std::string color;
     float litros;
     // Objeto tipo Abejas
@@ -214,8 +215,8 @@ int Flores::get_edad(){
 //Declaración de clase Medicinales que hereda de clase Plantas
 class Medicinales:public Planta{ 
 
+    //Declaro las variables privadas de instancia
     private: 
-    //Declara las variables de instancia
     std::string uso;
     std::string origen;
 
@@ -343,8 +344,8 @@ int Medicinales::get_edad(){
 //Clase Fruit
 class Fruit:public Planta{ 
 
+    //Declaro las variables privadas de instancia
     private: 
-    // Declara las variables de instancia
     std::string type;
     std::string time;
     int altura;
