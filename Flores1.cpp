@@ -2,15 +2,15 @@
 * Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 31 de mayo 2024
+* 03 de junio 2024
 */
 
 /*
 * Proyecto para Programación Orientada a Objetos
-*Es un programa que proporciona información acerca de tres tipos de plantas 
-*(flores, plantas medicinales y árboles frutales) y puede calcular la cantidad 
-*de agua que necesitan las flores en cada estación del año (input del usuario) y cuánto miden los 
-*árboles frutales de acuerdo a su edad (input del usuario)
+* Es un programa que proporciona información acerca de tres tipos de plantas 
+* (flores, plantas medicinales y árboles frutales) y puede calcular la cantidad 
+* de agua que necesitan las flores en cada estación del año (input del usuario) 
+* y cuánto miden los árboles frutales de acuerdo a su edad (input del usuario)
 */
 
 //Bibliotecas 
@@ -31,7 +31,7 @@ void menu(){
 }
 
 int main(){
-    int res, res1, res2, res3, years; //variables enteros
+    int res, res1, res2, res3, res4, years; //variables enteros
     std::string temporada; //variable string
     bool continua = true; //variable para ciclar el programa
     std::string bees; // variable string
@@ -44,13 +44,14 @@ int main(){
     // Objetos clase 2:
     Medicinales med1("Calendula", 2, "Egypt", "Anti-inflamatory"); 
     Medicinales med2("Rosemary", 1, "Mediterranean", "Antibacterial");
-    Medicinales med3("Lemon balm", 1, "Central Asia", "Stress and anxiety");
+    Medicinales med3("Lemon grass", 1, "Central Asia", "Stress and anxiety");
 
     //Objetos clase 3:
     Fruit frutal1("Pomegranate", 5, "Tree","September", 0); 
     Fruit frutal2("Tangerine", 6, "Tree","October-December", 0);
     Fruit frutal3("Fig", 3, "Tree","August-October", 0);
 
+    //Apuntadores
     Planta * planta1 = new Flores(flor1);
     Planta * planta2 = new Flores(flor2);
     Planta * planta3 = new Flores(flor3);
@@ -111,13 +112,25 @@ int main(){
         }
     }
     else if (res == 3){ //Opción "Medicinal plants"
-        std::cout << "Medicinal plants. What do you want to know?" << std::endl <<"1) Plant 1" << std::endl << "2) Plant 2" << std::endl << "3) Plant 3" << std::endl;
+        std::cout << "Medicinal plants. Do you feel bad?" << std::endl <<"1) Yes" << std::endl << "2) No" << std::endl;
         std::cin >> res2;
-        if (res2 == 1){ // Se imprimen todos los atributos de la planta 1
-            std::cout << "The plant is " << med1.get_nombre() << std::endl;
-            std::cout << "It is " << med1.get_edad() << " year old" <<std::endl;
-            std::cout << "It is from " << med1.get_origen() << std::endl;
-            std::cout << "It is " << med1.get_uso() << std::endl;
+        if (res2 == 1){ // Imprime qué planta es adecauda para la sintomatología
+            std::cout << "What happened?" << std::endl << "1) Blow" << std::endl << "2) Cut" << std::endl << "3) Stressed" << std::endl;
+            std::cin >> res4;
+            switch (res4)
+            {
+            case 1:
+                std::cout << "Make Calendula tea out of the flowers and apply to the inflamed area with a clean cloth" << std::endl;
+                break;
+            
+            case 2:
+                std::cout << "Use Rosemary oil for antiseptic effect" << std::endl;
+                break;
+
+            case 3:
+                std::cout << "Mix some drops of lemongrass essential oil with coconut oil and massage into your skin."<< std::endl << "Suggestion: Do a patch test first.";
+                break;
+            }
         }
         else if (res2 == 2){ //Se imprimen todos los atributos de la planta 2
             std::cout << "The plant is " << med2.get_nombre() << std::endl;
@@ -153,4 +166,4 @@ int main(){
         }
     }
             return 0;
-}           
+}  
