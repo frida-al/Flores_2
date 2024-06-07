@@ -10,7 +10,8 @@ El programa imprime un menú que le permite al usuario elegir qué información 
 2. Flores
 3. Plantas medicinales
 4. Árboles frutales
-5. Salir
+5. Agregar
+6. Salir
 Una vez realizada la elección, se puede acceder a más información acerca de cada tipo de planta. Si el usuario escoge *flores* podrá calcular el riego y si las flores han estado en contacto con las abejas, en *árboles frutales*, se podrá calcular la altura de cada árbol dependiendo de la edad y en *plantas medicinales* se puede ofrecer un remedio con la planta de acuerdo con cierta sintomatología.
  
 ### Casos que harían que el proyecto deje de funcionar:
@@ -34,3 +35,5 @@ Versión 3.0: 28 de mayo de 2024. Las modificaciones de esta versión fueron par
 Versión 4.0: 31 de mayo de 2024. Se rehizo la sobreescritura para que funcionara el polimorfismo, que imprime todos los atributos de las plantas. Este se implementó mediante agregación. Se actualizó el UML.
 
 Versión 5.0: 03 de junio de 2024. Se actualizó el menú para agregar la opción de las *plantas medicinales*. La clase **Planta** se estableció como clase abstracta.
+
+Versión 6.0: 06 de junio de 2024. Se creó una nueva opción en el menú que le permite al usuario agregar plantas. Se agregó la función delete para desalojar la memoria dinámica de los apuntadores. Los atributos privados de la clase **Invernadero** se hicieron públicos para que puedan utilizarse desde el main con la función delete. Se actualizó el UML. 
