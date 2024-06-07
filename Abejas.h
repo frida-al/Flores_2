@@ -1,8 +1,8 @@
 /*
-* Proyecto Invernadero 
+* Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 03 de junio 2024
+* 21 de mayo 2024
 */
 
 /**
@@ -16,9 +16,11 @@
 
 class Abejas {
 
-    //Declara la variable privada de instancia
     private:
-        std::string abejas; 
+    //Declara la variable de instancia
+        int abejas; 
+        std::string si = "The flower has been pollinated";
+        std:: string no = "The flower has not been pollinated";
 
     public:
      /**
@@ -27,17 +29,17 @@ class Abejas {
      * @param
      * @return Objeto Planta
      */
-        Abejas(): abejas(""){}; 
+        Abejas(): abejas(0){}; 
     /**
      *  Constructor 
      * 
      * @param nom, ed
      * @return Objeto Planta
      */
-        Abejas(std::string abe): abejas(abe){}; // Constructor
+        Abejas(int abe): abejas(abe){}; // Constructor
         // Métodos miembros de la clase
-        void set_abejas(std::string);
-        bool get_abejas();
+        void set_abejas(int);
+        std::string get_abejas();
 };
 /**
  * setter de variable abejas
@@ -46,24 +48,23 @@ class Abejas {
  * @param abe
  * @return
  */
- void Abejas::set_abejas(std::string abe){ //setter de 
+ void Abejas::set_abejas(int abe){ //setter de 
     abejas = abe;
 }
  /**
  * getter de variable abejas
- * regresa verdadero o falso
+ * regresa un string que confirma si las plantas han sido polinizadas o no
  * 
  * @param
- * @return booleano
+ * @return std::string
 */
-bool Abejas::get_abejas(){
-    if (abejas == "Yes"){
-        return true;
+std::string Abejas::get_abejas(){
+    if (abejas == 1){
+        return si;
     }
-    else if (abejas == "No"){
-        return false;
+    else if (abejas == 2){
+        return no;
     }
-    return false;
+    return no;
 } 
 #endif //ABEJAS_H
-
