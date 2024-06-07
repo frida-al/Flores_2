@@ -2,7 +2,7 @@
 * Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 03 de junio 2024
+* 06 de junio 2024
 */
 
 /*
@@ -10,7 +10,8 @@
 * Es un programa que proporciona información acerca de tres tipos de plantas 
 * (flores, plantas medicinales y árboles frutales) y puede calcular la cantidad 
 * de agua que necesitan las flores en cada estación del año (input del usuario) 
-* y cuánto miden los árboles frutales de acuerdo a su edad (input del usuario)
+* y cuánto miden los árboles frutales de acuerdo a su edad (input del usuario).
+* El usuario también puede agregar plantas.
 */
 
 //Bibliotecas 
@@ -27,14 +28,15 @@ void menu(){
     std::cout << "2) Flowers" <<std::endl;
     std::cout << "3) Medicinal plants" <<std::endl;
     std::cout << "4) Fruit plants" <<std::endl;
-    std::cout << "5) Exit" <<std::endl;
+    std::cout << "5) Add" << std::endl;
+    std::cout << "6) Exit" << std::endl;
 }
 
 int main(){
-    int res, res1, res2, res3, res4, years; //variables enteros
-    std::string temporada; //variable string
+    int res, res1, res2, res3, res4, res5, years, edad, bees; //variables enteros
+    std::string nombre, color, temporada, origen, uso, tipo, tiempo; // variables string
     bool continua = true; //variable para ciclar el programa
-    std::string bees; // variable string
+    float litros; // variable float
     Invernadero inverna; // Objeto tipo invernadero
     // Objetos clase 1:
     Flores flor1("Peony", 1, "pink", 8.0);
@@ -62,6 +64,16 @@ int main(){
     Planta * planta8 = new Fruit(frutal2);
     Planta * planta9 = new Fruit(frutal3);
 
+    inverna.agrega_ejemplos(planta1);
+    inverna.agrega_ejemplos(planta2);
+    inverna.agrega_ejemplos(planta3);
+    inverna.agrega_ejemplos(planta4);
+    inverna.agrega_ejemplos(planta5);
+    inverna.agrega_ejemplos(planta6);
+    inverna.agrega_ejemplos(planta7);
+    inverna.agrega_ejemplos(planta8);
+    inverna.agrega_ejemplos(planta9);
+    
     //Ciclo para que el sistema siga corriendo mientras no se elija la opción "Exit"
     while (continua == true)
     {    
@@ -72,16 +84,7 @@ int main(){
     std::cin >> res; 
 
     //Dependiendo del input, se realizan ciertas operaciones
-    if (res == 1){ // Opción "All names and ages". Polimorfismo
-        inverna.agrega_ejemplos(planta1);
-        inverna.agrega_ejemplos(planta2);
-        inverna.agrega_ejemplos(planta3);
-        inverna.agrega_ejemplos(planta4);
-        inverna.agrega_ejemplos(planta5);
-        inverna.agrega_ejemplos(planta6);
-        inverna.agrega_ejemplos(planta7);
-        inverna.agrega_ejemplos(planta8);
-        inverna.agrega_ejemplos(planta9);
+    if (res == 1){ // Opción "Get all". Polimorfismo
         inverna.imprime_ejemplos();
         }
     else if (res == 2){ // Opción "Flowers"
@@ -94,21 +97,20 @@ int main(){
             flor2.riego(temporada);
             flor3.riego(temporada);
             // Se imprime cuántos litros necesita cada flor según la estación del año
-            std::cout << "The flower 1 needs " << flor1.get_litros() << " liters per week" << std::endl;
-            std::cout << "The flower 2 needs " << flor2.get_litros() <<  " liters per week" << std::endl;
-            std::cout << "The flower 3 needs " << flor3.get_litros() <<  " liters per week" << std::endl;
+            std::cout << flor1.get_nombre() << " needs " << flor1.get_litros(temporada) << " liters per week" << std::endl;
+            std::cout << flor2.get_nombre() << " needs " <<  flor2.get_litros(temporada) <<  " liters per week" << std::endl;
+            std::cout << flor3.get_nombre() << " needs " << flor3.get_litros(temporada) <<  " liters per week" << std::endl;
         }
         else if (res1 == 2){ // Se solicita el input: "¿Ha habido contacto entre flores y abejas?"
-            std::cout << "Were there bees with the flowers? Answer Yes or No ";
+            std::cout << "Were there bees with the flowers? " << std::endl << "1) Yes" << std::endl << "2) No" << std::endl;
             std::cin >> bees;
             flor1.set_abejas(bees);
             flor2.set_abejas(bees);
             flor3.set_abejas(bees);
-            // Se imprimen los valores true or false dependiendo el input
-            std::cout << "Are they pollinated? 1 for yes (true), 0 for no (false)" << std::endl;
-            std::cout << flor1.get_abejas().get_abejas() << std::endl;
-            std::cout << flor2.get_abejas().get_abejas() << std::endl;
-            std::cout << flor3.get_abejas().get_abejas() << std::endl;
+            // Se imprime un string que confirma si sí se han polinizado las flores
+            std::cout << flor1.get_nombre() << ": " << flor1.get_abejas().get_abejas() << std::endl;
+            std::cout << flor2.get_nombre() << ": " << flor2.get_abejas().get_abejas() << std::endl;
+            std::cout << flor3.get_nombre() << ": " << flor3.get_abejas().get_abejas() << std::endl;
         }
     }
     else if (res == 3){ //Opción "Medicinal plants"
@@ -132,24 +134,13 @@ int main(){
                 break;
             }
         }
-        else if (res2 == 2){ //Se imprimen todos los atributos de la planta 2
-            std::cout << "The plant is " << med2.get_nombre() << std::endl;
-            std::cout << "It is " << med2.get_edad() << " years old" <<std::endl;
-            std::cout << "It is from " << med2.get_origen() << std::endl;
-            std::cout << "It helps with " << med2.get_uso() << std::endl;
-        }
-        else if (res2 == 3){ //Se imprimen todos los atributos de la planta 3
-            std::cout << "The plant is " << med3.get_nombre() << std::endl;
-            std::cout << "It is " << med3.get_edad() << " year old" <<std::endl;
-            std::cout << "It is from " << med3.get_origen() << std::endl;
-            std::cout << "It helps with " << med3.get_uso() << std::endl;
-        }
+        
     }  
     else if (res == 4){ // Opcion "Fruit trees"
         std::cout << std::endl << "1) Calculate Height" << std::endl;
         std::cin >> res3;
         if (res3 == 1){  //Se solicita el input: "¿cuál es la edad del árbol?"
-            std::cout << "Age of the tree: "; 
+            std::cout << "Age of the tree? "; 
             std::cin >> years;
             frutal1.height(20, years);
             frutal2.height(18, years);
@@ -160,10 +151,56 @@ int main(){
             std::cout << "The Fig tree is " << frutal3.get_altura() << " inches tall" << std::endl;
         }
     }
-    else if (res == 5){ //Opción "Exit"
-        std::cout << "Good bye" << std::endl;
-        continua = false;
+    else if (res == 5){ // Opcion "Add, permite que el usuario agregue plantas de los tres tipos. Cada una solicita caracteristicas diferentes"
+        std::cout << std::endl << "1) Add Flower" << std::endl << "2) Add Medicinal plant" << std::endl << "3) Add Fruit plant" << std::endl;
+        std::cin >> res5;
+        switch (res5){
+        case 1:
+            {std::cout << "Enter the name of the flower: ";
+            std::cin >> nombre;
+            std::cout << "Enter the age of the flower: ";
+            std::cin >> edad;
+            std::cout << "Enter the color of the flower: ";
+            std::cin >> color;
+            std::cout << "Enter how many liters it needs of water it needs in summer: ";
+            std::cin >> litros;
+            Planta * planta10 = new Flores(nombre, edad, color, litros);
+            inverna.agrega_ejemplos(planta10);}
+            break;
+        case 2: 
+            {std::cout << "Enter the name of the plant: ";
+            std::cin >> nombre;
+            std::cout << "Enter the age of the plant: ";
+            std::cin >> edad;
+            std::cout << "Enter the homeland of the plant: ";
+            std::cin >> origen;
+            std::cout << "Enter the use of the plant: ";
+            std::cin >> uso;
+            Planta * planta11 = new Medicinales(nombre, edad, origen, uso);
+            inverna.agrega_ejemplos(planta11);}
+            break;
+        case 3:
+            {std::cout << "Enter the name of the fruit plant: ";
+            std::cin >> nombre;
+            std::cout << "Enter the age of the fruit plant: ";
+            std::cin >> edad;
+            std::cout << "Enter the type of the fruit plant (if it is a tree or a plant): ";
+            std::cin >> tipo;
+            std::cout << "Enter the months when it bears fruit: ";
+            std::cin >> tiempo;
+            Planta * planta12 = new Fruit(nombre, edad, tipo, tiempo);
+            inverna.agrega_ejemplos(planta12);}
+            break;
         }
     }
+    else if (res == 6){ //Opción "Exit"
+        for(int i = 0; i < inverna.cont; i++){
+            delete inverna.planta[i];
+            }
+        std::cout << "Good bye" << std::endl;
+        continua = false;
+    }
+    }       
+    
             return 0;
-}  
+}           
