@@ -2,7 +2,7 @@
 * Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 21 de mayo 2024
+* 06 de junio 2024
 */
 
 /**
