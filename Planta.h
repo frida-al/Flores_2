@@ -2,7 +2,7 @@
 * Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 03 de junio 2024
+* 06 de junio 2024
 */
 
 /*
@@ -51,7 +51,7 @@ class Flores:public Planta{
     //Declaro las variables privadas de instancia
     private: 
     std::string color;
-    float litros;
+    float litros, litros1;
     // Objeto tipo Abejas
     Abejas poliniza; 
 
@@ -74,10 +74,10 @@ class Flores:public Planta{
     void set_color(std::string);
     std::string get_color();
     void set_litros(float);
-    float get_litros();
+    float get_litros(std::string);
     void riego(std::string);
     Abejas get_abejas();
-    void set_abejas(std::string);
+    void set_abejas(int);
     void set_nombre (std::string); 
     std::string get_nombre(); 
     void set_edad (int); 
@@ -96,6 +96,7 @@ void Flores::imprime_atributos(){
     std::cout << "Name: " << nombre << std::endl;
     std::cout << "Age: " << edad << std::endl;
     std::cout << "Color: " << color << std::endl;
+    std::cout << std::endl;
 }
 /**
  * setter de variable color
@@ -131,11 +132,16 @@ void Flores::set_litros(float lit){
  * getter de variable litros
  * regresa litros
  * 
- * @param
+ * @param temporada
  * @return litros
 */
-float Flores::get_litros(){ 
-    return litros;
+float Flores::get_litros(std::string temporada){ 
+    if(temporada == "summer" || temporada == "spring" || temporada == "Summer" || temporada == "Spring"){
+        return litros;
+    }
+    else if(temporada == "winter" || temporada == "Winter" || temporada == "Autumn" || temporada == "autumn"){
+        return litros1;
+    }
 }
 /**
  * Función riego
@@ -145,8 +151,8 @@ float Flores::get_litros(){
  * @return
  */
 void Flores::riego(std::string temporada){ 
-    if (temporada == "winter" || temporada == "Winter"){
-        litros = litros / 2;
+    if (temporada == "winter" || temporada == "Winter" || temporada == "Autumn" || temporada == "autumn"){
+        litros1 = litros / 2;
     }
 }
 /**
@@ -156,7 +162,7 @@ void Flores::riego(std::string temporada){
  * @param bees
  * @return
  */
-void Flores::set_abejas(std::string bees){
+void Flores::set_abejas(int bees){
     Abejas pol(bees);
     poliniza = pol;
 }
@@ -258,6 +264,7 @@ void Medicinales::imprime_atributos(){
     std::cout << "Age: " << edad << std::endl;
     std::cout << "Origin: " << origen << std::endl;
     std::cout << "Use: " << uso << std::endl;
+    std::cout << std::endl;
 }
 /**
  * Setter de variable origen
@@ -358,6 +365,7 @@ class Fruit:public Planta{
      * @return Objeto Fruit
      */
     Fruit(): Planta(), type(""), time(""), altura(0){}; 
+    Fruit(std::string nom, int ed, std::string ty, std::string ti):Planta(nom, ed), type(ty), time(ti){};
     /**
      *  Constructor 
      * 
@@ -390,6 +398,8 @@ void Fruit::imprime_atributos(){
     std::cout << "Name: " << nombre << std::endl;
     std::cout << "Age: " << edad << std::endl;
     std::cout << "Type: " << type << std::endl;
+    std::cout << "When it bears fruit: " << time << std::endl;
+    std::cout << std::endl;
 }
 /**
  * Setter de variable type
