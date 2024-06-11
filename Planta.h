@@ -2,7 +2,7 @@
 * Proyecto Invernadero
 * Frida Arcadia Luna
 * A01711615
-* 06 de junio 2024
+* 11 de junio 2024
 */
 
 /*
@@ -74,8 +74,8 @@ class Flores:public Planta{
     void set_color(std::string);
     std::string get_color();
     void set_litros(float);
-    float get_litros(std::string);
-    void riego(std::string);
+    float get_litros(int);
+    void riego(int);
     Abejas get_abejas();
     void set_abejas(int);
     void set_nombre (std::string); 
@@ -135,11 +135,11 @@ void Flores::set_litros(float lit){
  * @param temporada
  * @return litros
 */
-float Flores::get_litros(std::string temporada){ 
-    if(temporada == "summer" || temporada == "spring" || temporada == "Summer" || temporada == "Spring"){
+float Flores::get_litros(int temporada){ 
+    if(temporada == 1 || temporada == 2){
         return litros;
     }
-    else if(temporada == "winter" || temporada == "Winter" || temporada == "Autumn" || temporada == "autumn"){
+    else if(temporada == 3 || temporada == 4){
         return litros1;
     }
 }
@@ -150,8 +150,8 @@ float Flores::get_litros(std::string temporada){
  * @param temporada
  * @return
  */
-void Flores::riego(std::string temporada){ 
-    if (temporada == "winter" || temporada == "Winter" || temporada == "Autumn" || temporada == "autumn"){
+void Flores::riego(int temporada){ 
+    if (temporada == 3 || temporada == 4){
         litros1 = litros / 2;
     }
 }
