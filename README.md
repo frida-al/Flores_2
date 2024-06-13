@@ -26,16 +26,16 @@ El programa solo corre en la consola y esta hecho con c++ standard por lo que co
 - correr en windows: "a.exe"
   
 ## Correcciones
-Versión 1.0: 13 de mayo de 2024. El programa cuenta inicialmente con 4 clases de plantas, de las cuales 3 heredan de la clase principal y la clase de composición *abejas*, además del main. 
+Versión 1.0: 13 de mayo de 2024. El programa cuenta inicialmente con 4 clases de plantas, de las cuales 3 heredan de la clase principal y la clase de composición *abejas*, además del main. *Subcompetencias*. Se identificaron las clases para el problema, al igual que los casos que harían que el proyecto deje de funcionar. Se generó el UML que plantea las clases del problema.
 
-Versión 2.0: 21 de mayo de 2024. El archivo **Planta.h** se actualizó mediante la utilización de sobreescritura y sobrecarga. Es, además, el archivo que contiene la herencia. Se actualizó el UML con los métodos de la sobreescritura en las clases hijas.
+Versión 2.0: 21 de mayo de 2024. El archivo **Planta.h** se actualizó mediante la utilización de sobreescritura y sobrecarga. Es, además, el archivo que contiene la herencia. Se actualizó el UML con los métodos de la sobreescritura en las clases hijas. *Subcompetencias*. Se implementó herencia, modificadores de acceso y sobrecarga.
 
 Versión 3.0: 28 de mayo de 2024. Las modificaciones de esta versión fueron para implementar polimorfismo. En primer lugar, los métodos get_nombre y get_edad se modificaron a virtual. En segundo lugar, se creo una clase llama **Invernadero.h** donde se creó un arreglo tipo Planta para implementar el polimorfismo. En tercer lugar, se creó una nueva opción en el menú, que es "All names and ages" para mandar a llamar los métodos get_nombre y get_edad de todas las plantas (polimorfismo). Por último, se actualizó el UML. 
 
-Versión 4.0: 31 de mayo de 2024. Se rehizo la sobreescritura para que funcionara el polimorfismo, que imprime todos los atributos de las plantas. Este se implementó mediante agregación. Se actualizó el UML.
+Versión 4.0: 31 de mayo de 2024. Se rehizo la sobreescritura para que funcionara el polimorfismo, que imprime todos los atributos de las plantas. Este se implementó mediante agregación. Se actualizó el UML. *Subcompetencias*. Se implementó de manera correcta la sobreescritura de métodos y el polimorfismo.
 
-Versión 5.0: 03 de junio de 2024. Se actualizó el menú para agregar la opción de las *plantas medicinales*. La clase **Planta** se estableció como clase abstracta.
+Versión 5.0: 03 de junio de 2024. Se actualizó el menú para agregar la opción de las *plantas medicinales*. La clase **Planta** se estableció como clase abstracta. *Subcompetencias*.  Se implementó una clase abstracta.
 
 Versión 6.0: 06 de junio de 2024. Se creó una nueva opción en el menú que le permite al usuario agregar plantas. Se agregó la función delete para desalojar la memoria dinámica de los apuntadores. Los atributos privados de la clase **Invernadero** se hicieron públicos para que puedan utilizarse desde el main con la función delete. Se actualizó el UML. 
 
-Versión 7.0: 11 de junio de 2024. Se actualizó el menú para que cada opción se seleccione solo mediante números. Se hicieron los cambios correspondientes. Se agregaron instrucciones.
+Versión 7.0: 11 de junio de 2024. Se actualizó el menú para que cada opción se seleccione solo mediante números. Se hicieron los cambios correspondientes. Se agregaron instrucciones. *Subcompetencias*. Durante el desarrollo del proyecto, se ha sobreescrito en los archivos de Github para crear un historial. Se incluye toda la documentación necesaria en este espacio.
