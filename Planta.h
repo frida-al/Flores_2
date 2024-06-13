@@ -364,28 +364,35 @@ class Fruit:public Planta{
      * @param
      * @return Objeto Fruit
      */
-    Fruit(): Planta(), type(""), time(""), altura(0){}; 
-    Fruit(std::string nom, int ed, std::string ty, std::string ti):Planta(nom, ed), type(ty), time(ti){};
-    /**
+     Fruit(): Planta(), type(""), time(""), altura(0){}; 
+     /**
+     *  Constructor 
+     * 
+     * @param nom, ed, ty, ti
+     * @return Objeto Fruit
+     */
+     Fruit(std::string nom, int ed, std::string ty, std::string ti):Planta(nom, ed), type(ty), time(ti){};
+     /**
      *  Constructor 
      * 
      * @param nom, ed, ty, ti, alt
      * @return Objeto Fruit
      */ 
-    Fruit(std::string nom, int ed, std::string ty, std::string ti, int alt): Planta(nom, ed), type(ty), time(ti), altura(alt){};
-    // Metodos miembro de la clase
-    void set_type(std::string);
-    std::string get_type();
-    void set_time(std::string);
-    std::string get_time();
-    void set_altura(int);
-    int get_altura();
-    void height(int, int);
-    void set_nombre (std::string); 
-    std::string get_nombre(); 
-    void set_edad (int); 
-    int get_edad(); 
-    void imprime_atributos();
+
+     Fruit(std::string nom, int ed, std::string ty, std::string ti, int alt): Planta(nom, ed), type(ty), time(ti), altura(alt){};
+     // Metodos miembro de la clase
+     void set_type(std::string);
+     std::string get_type();
+     void set_time(std::string);
+     std::string get_time();
+     void set_altura(int);
+     int get_altura();
+     void height(int, int);
+     void set_nombre (std::string); 
+     std::string get_nombre(); 
+     void set_edad (int); 
+     int get_edad(); 
+     void imprime_atributos();
 };
 /**
  * Función imprime_atributos
